@@ -204,12 +204,12 @@ func (h *Hilo) Gateways(location Location) ([]Gateway, error) {
 }
 
 type Attribute struct {
-	DeviceId     int       `json:"deviceId"`
-	LocationId   int       `json:"locationId"`
-	TimeStampUTC time.Time `json:"timeStampUTC"`
-	Attribute    string    `json:"attribute"`
-	Value        float64   `json:"value"`
-	ValueType    string    `json:"valueType"`
+	DeviceId     int         `json:"deviceId"`
+	LocationId   int         `json:"locationId"`
+	TimeStampUTC time.Time   `json:"timeStampUTC"`
+	Attribute    string      `json:"attribute"`
+	Value        interface{} `json:"value"`
+	ValueType    string      `json:"valueType"`
 }
 
 func (h *Hilo) DeviceAttributes(device Device) (map[string]Attribute, error) {
